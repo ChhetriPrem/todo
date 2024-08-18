@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To do app</title>
+    <link rel="stylesheet" href="home.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Indie+Flower&family=Pacifico&family=Patrick+Hand&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="todo-container" id="todo-container">
+      <div class="show" id="">
+        <div class="heading-container">
+          <h1>TO dO LIST</h1>
+        </div>
+
+        <div class="written" id="todo-list">
+          <!-- stractch -->
+          <!-- <div class="todo" id="1">
+            <input type="checkbox" name="" id="" class="checkbox"/>
+            <h2>1) Eat food</h2>
+            <button id="todo1" onclick="clearr(1)" class="clear">X</button>
+          </div> -->
+          <!-- stractch -->
+        </div>
+      </div>
+
+      <!-- input add a todo  -->
+      <div class="add-todo-container">
+        <input type="text" id="input" />
+        <button id="add-todo" onclick="addTodo()">Add</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script type="module" src="firestore.js"></script>
+  </body>
+</html>
