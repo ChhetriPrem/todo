@@ -55,6 +55,7 @@ function clearr(id) {
 
 function updateNumbers() {
   const todoItems = document.querySelectorAll(".todo");
+  console.log(todoItems);
   let newCount = 1; // Start with 1 for the first item
 
   todoItems.forEach((item) => {
@@ -62,10 +63,13 @@ function updateNumbers() {
     const value = h3.textContent.split(") ")[1]; // Get the text without the number part
     h3.textContent = `${newCount}) ${value}`; // Update the number and text
     item.id = `todo-${newCount}`; // Update the div id
+
     const button = item.querySelector("button");
     button.setAttribute("onclick", `clearr(${newCount})`); // Update the button's onclick function
     const checkbox = item.querySelector("input[type='checkbox']");
     checkbox.setAttribute("onclick", `checkboxClicked(${newCount})`); // Update the checkbox's onclick function
+    checkbox.id = `checkbox-${newCount}`;
+    h3.id = `todo-text-${newCount}`;
     newCount++;
   });
 
@@ -80,11 +84,13 @@ document.getElementById("input").addEventListener("keydown", function (event) {
   }
 });
 
+// set interval that keeps on checking the ids
+
 // Function for checkbox clicked
 const checkboxClicked = (id) => {
   const checkbox = document.getElementById(`checkbox-${id}`); // Use checkbox id
   const h2Val = document.getElementById(`todo-text-${id}`);
-
+  console.log(h2Val);
   if (checkbox.checked) {
     if (h2Val) {
       h2Val.style.textDecoration = "line-through";
